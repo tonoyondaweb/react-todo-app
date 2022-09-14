@@ -94,11 +94,20 @@ export default function App() {
       <div className="main-container">
         <Header handleClick={displayInputField} />
         <ul className="items">
-          {
-            currentTab === "active" && activeItems
-          }
-          {currentTab === "completed" && completedItems}
-          {currentTab === "all" && allItems}
+          {currentTab === "active" && (
+            activeItems.length > 0 ? activeItems : 
+            <p className="alert">You are all caught up :)</p>
+          )}
+          {currentTab === "completed" && (
+            completedItems.length > 0 ? completedItems : 
+            <p className="alert">No tasks completed :(</p>
+          )}
+          {currentTab === "all" && (
+            allItems.length > 0 ? allItems : 
+            <p className="alert">No items :(</p>
+          )}
+          {/* {currentTab === "completed" && completedItems}
+          {currentTab === "all" && allItems} */}
         </ul>
         {
           inputEl &&

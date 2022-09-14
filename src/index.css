@@ -82,6 +82,13 @@ section {
 	outline: none;
 }
 
+.alert {
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #122620;
+}
+
 .items{
 	margin: 35px 0
 }
