@@ -1,3 +1,3 @@
-#react-todo-app
+# react-todo-app
 
-A simple to do app built with react
+A simple to do app built with React.
