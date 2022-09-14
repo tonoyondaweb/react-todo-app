@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Nav() {
+export default function Nav(props) {
 
     const [activeTab, setActiveTab] = useState(1)
 
@@ -13,21 +13,30 @@ export default function Nav() {
             <ul>
                 <li 
                 style={{color: activeTab === 1 ? "#B68D40" : "#D2BD94"}}
-                onClick={(event) => selectTab(1)}
-                >
-                    All
-                </li>
-                <li 
-                style={{color: activeTab === 2 ? "#B68D40" : "#D2BD94"}}
-                onClick={(event) => selectTab(2)}
+                onClick={() => {
+                    selectTab(1)
+                    props.handleClick("active")
+                }}
                 >
                     Active
                 </li>
                 <li 
-                style={{color: activeTab === 3 ? "#B68D40" : "#D2BD94"}}
-                onClick={() => selectTab(3)}
+                style={{color: activeTab === 2 ? "#B68D40" : "#D2BD94"}}
+                onClick={() => {
+                    selectTab(2)
+                    props.handleClick("completed")
+                }}
                 >
                     Completed
+                </li>
+                <li 
+                style={{color: activeTab === 3 ? "#B68D40" : "#D2BD94"}}
+                onClick={() => {
+                    selectTab(3)
+                    props.handleClick("all")
+                }}
+                >
+                    All
                 </li>
             </ul>
         </nav>
